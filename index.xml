@@ -152,7 +152,7 @@
         <pubDate>Sat, 05 Apr 2025 09:00:59 +0800</pubDate>
         
         <guid>https://w2strive.github.io/p/myfirstblog/</guid>
-        <description>&lt;img src="https://w2strive.github.io/p/myfirstblog/matt-le-SJSpo9hQf7s-unsplash.jpg" alt="Featured image of post MyFirstBlog" /&gt;&lt;h1 id=&#34;hugo-常用命令&#34;&gt;hugo 常用命令
+        <description>&lt;h1 id=&#34;hugo-常用命令&#34;&gt;hugo 常用命令
 &lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;新建站点：&lt;code&gt;hugo new site quickstart&lt;/code&gt;&lt;/p&gt;
