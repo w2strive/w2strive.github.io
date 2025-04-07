@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Posts on w2strive</title>
-        <link>https://w2strive.github.io/post/</link>
-        <description>Recent content in Posts on w2strive</description>
+        <title>工具 on w2strive</title>
+        <link>https://w2strive.github.io/categories/%E5%B7%A5%E5%85%B7/</link>
+        <description>Recent content in 工具 on w2strive</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>w2strive</copyright>
-        <lastBuildDate>Tue, 08 Apr 2025 00:19:22 +0800</lastBuildDate><atom:link href="https://w2strive.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 08 Apr 2025 00:19:22 +0800</lastBuildDate><atom:link href="https://w2strive.github.io/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>git 常用操作</title>
         <link>https://w2strive.github.io/p/git-%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</link>
         <pubDate>Mon, 07 Apr 2025 22:56:09 +0800</pubDate>
@@ -145,26 +145,6 @@
 &lt;/h1&gt;&lt;p&gt;子模块初始化 &lt;code&gt;git submodule init&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git submodule update&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git clone --recurse-submodules git@github.com:xxx&lt;/code&gt;&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>MyFirstBlog</title>
-        <link>https://w2strive.github.io/p/myfirstblog/</link>
-        <pubDate>Sat, 05 Apr 2025 09:00:59 +0800</pubDate>
-        
-        <guid>https://w2strive.github.io/p/myfirstblog/</guid>
-        <description>&lt;img src="https://w2strive.github.io/p/myfirstblog/matt-le-SJSpo9hQf7s-unsplash.jpg" alt="Featured image of post MyFirstBlog" /&gt;&lt;h1 id=&#34;hugo-常用命令&#34;&gt;hugo 常用命令
-&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;新建站点：&lt;code&gt;hugo new site quickstart&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;新建文章：&lt;code&gt;hugo new content/posts/my-first-post/index.md&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://hugo.opendocs.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;HUGO中文文档&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
 </description>
         </item>
         
