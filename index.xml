@@ -26,17 +26,30 @@
 		data-flex-basis=&#34;339px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;h2 id=&#34;基础版本管理&#34;&gt;基础版本管理
-&lt;/h2&gt;&lt;h3 id=&#34;版本升级&#34;&gt;版本升级
-&lt;/h3&gt;&lt;p&gt;在 CentOS 7 系统中升级 Git 版本到 2.x：
-&lt;a class=&#34;link&#34; href=&#34;https://juejin.cn/post/7071910670056292389&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;详细升级教程&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;版本回退&#34;&gt;版本回退
-&lt;/h3&gt;&lt;p&gt;Git 中的版本回退操作说明：&lt;/p&gt;
+&lt;h2 id=&#34;暂存修改&#34;&gt;暂存修改
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;暂存当前工作：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git stash&lt;/code&gt;：保存当前工作现场&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git stash list&lt;/code&gt;：查看存储列表&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git stash pop&lt;/code&gt;：恢复并删除第一个存储&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git stash drop stash_id&lt;/code&gt;：删除指定存储&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;跨分支修复：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在 master 分支修复 bug 后&lt;/li&gt;
+&lt;li&gt;使用 &lt;code&gt;git cherry-pick &amp;lt;commit_id&amp;gt;&lt;/code&gt; 将修复同步到开发分支&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;版本回退&#34;&gt;版本回退
+&lt;/h2&gt;&lt;p&gt;Git 中的版本回退操作说明：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;HEAD&lt;/code&gt;：表示当前版本&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;HEAD^&lt;/code&gt;：表示上一个版本&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;HEAD^^&lt;/code&gt;：表示上上个版本&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;HEAD~n&lt;/code&gt;：表示前 n 个版本（如：HEAD~100）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;版本回退操作示例：&lt;/p&gt;
@@ -59,27 +72,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 恢复到指定版本&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ git reset --hard 7b5e6e8
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;HEAD 现在位于 7b5e6e8 append GPL
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;工作区管理&#34;&gt;工作区管理
-&lt;/h2&gt;&lt;h3 id=&#34;暂存修改&#34;&gt;暂存修改
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;暂存当前工作：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;git stash&lt;/code&gt;：保存当前工作现场&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;git stash list&lt;/code&gt;：查看存储列表&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;git stash pop&lt;/code&gt;：恢复并删除第一个存储&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;git stash drop stash_id&lt;/code&gt;：删除指定存储&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;跨分支修复：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;在 master 分支修复 bug 后&lt;/li&gt;
-&lt;li&gt;使用 &lt;code&gt;git cherry-pick &amp;lt;commit_id&amp;gt;&lt;/code&gt; 将修复同步到开发分支&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;分支管理&#34;&gt;分支管理
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;分支管理&#34;&gt;分支管理
 &lt;/h2&gt;&lt;h3 id=&#34;分支操作命令&#34;&gt;分支操作命令
 &lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;git remote -v&lt;/code&gt;：查看远程仓库信息&lt;/li&gt;
@@ -88,7 +81,16 @@
 &lt;li&gt;&lt;code&gt;git checkout -b branch-name origin/branch-name&lt;/code&gt;：创建本地分支并关联远程分支&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;git branch --set-upstream branch-name origin/branch-name&lt;/code&gt;：建立分支关联&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;远程仓库配置&#34;&gt;远程仓库配置
+&lt;h3 id=&#34;子模块管理&#34;&gt;子模块管理
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 初始化子模块&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git submodule init
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 更新子模块&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git submodule update
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 克隆包含子模块的项目&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone --recurse-submodules &amp;lt;repository-url&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;远程仓库配置&#34;&gt;远程仓库配置
 &lt;/h3&gt;&lt;p&gt;配置远程仓库的标准流程：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 进入项目目录&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd /path/to/your/git/repo/
@@ -101,23 +103,46 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 推送代码&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git push -u origin --all       &lt;span style=&#34;color:#75715e&#34;&gt;# 推送所有分支&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git push -u origin --tags      &lt;span style=&#34;color:#75715e&#34;&gt;# 推送所有标签&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;高级特性&#34;&gt;高级特性
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;分支合并&#34;&gt;分支合并
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Fast-forward 合并&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git checkout master
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git merge feature
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# No fast-forward 合并&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git checkout master
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git merge --no-ff feature
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;fast-forward-合并&#34;&gt;Fast-forward 合并
+&lt;/h3&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# 合并前
+A(1a2b3c)---B(4d5e6f)---C(7g8h9i) (master)
+    \
+     D(a1b2c3)---E(d4e5f6) (feature)
+      
+# 合并后
+A(1a2b3c)---B(4d5e6f)---C(7g8h9i)---D(a1b2c3)---E(d4e5f6) (master)
+    \
+     D(a1b2c3)---E(d4e5f6) (feature)
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;no-fast-forward-合并&#34;&gt;No fast-forward 合并
+&lt;/h3&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# 合并前
+A(1a2b3c)---B(4d5e6f)---C(7g8h9i) (master)
+    \
+     D(a1b2c3)---E(d4e5f6) (feature)
+     
+# 合并后
+A(1a2b3c)---B(4d5e6f)---C(7g8h9i)------F(x1y2z3) (master)
+    \                    /
+     D(a1b2c3)---E(d4e5f6) (feature)
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;高级特性&#34;&gt;高级特性
 &lt;/h2&gt;&lt;h3 id=&#34;选择性提取&#34;&gt;选择性提取
 &lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;从其他分支提取指定文件：
 &lt;code&gt;git checkout &amp;lt;分支名&amp;gt; &amp;lt;文件名或文件夹名&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;子模块管理&#34;&gt;子模块管理
-&lt;/h3&gt;&lt;p&gt;子模块的基本操作：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 初始化子模块&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git submodule init
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 更新子模块&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git submodule update
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 克隆包含子模块的项目&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone --recurse-submodules &amp;lt;repository-url&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;h2 id=&#34;其他&#34;&gt;其他
+&lt;/h2&gt;&lt;h3 id=&#34;版本升级&#34;&gt;版本升级
+&lt;/h3&gt;&lt;p&gt;在 CentOS 7 系统中升级 Git 版本到 2.x：
+&lt;a class=&#34;link&#34; href=&#34;https://juejin.cn/post/7071910670056292389&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;详细升级教程&lt;/a&gt;&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>MyFirstBlog</title>
